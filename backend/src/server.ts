@@ -1,1 +1,11 @@
-console.log("Hello via Bun!");
+import express from "express";
+
+const app = express();
+
+app.get("/api/health", (req, res) => {
+    res.json({ ok: true});
+});
+
+app.listen(3000, () => {
+    console.log("Backend running on http://localhost:3000");
+});
